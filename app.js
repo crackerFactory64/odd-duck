@@ -3,6 +3,10 @@ const option1El = document.getElementById("option1");
 const option2El = document.getElementById("option2");
 const option3El = document.getElementById("option3");
 
+const resultsHeading = document.getElementById("results-heading");
+const viewResultsBtn = document.getElementById("view-results");
+const resultsEl = document.getElementById("results");
+
 function Product(name, src) {
   this.name = name;
   this.src = src;
@@ -83,6 +87,31 @@ function handleClick(event) {
     }
   }
   renderProducts();
+  rounds--;
+
+  resultsHeading.textContent = `Rounds remaining: ${rounds}`;
+
+  if (rounds === 0) {
+    endVoting();
+  }
 }
 
+function endVoting() {
+  votingOptionsEl.removeEventListener("click", handleClick);
+  viewResultsBtn.removeAttribute("disabled");
+}
+
+function renderResults() {
+  resultsHeading.textContent = "Results";
+  for (let i = 0; i < products.length; i++) {
+    const li = document.createElement("li");
+    li.textContent = `${products[i].name} had ${products[i].views} views and ${products[i].clicks} clicks.`;
+    resultsEl.appendChild(li);
+  }
+  viewResultsBtn.setAttribute("disabled", "");
+}
+
+let rounds = 25;
+resultsHeading.textContent = `Rounds remaining: ${rounds}`;
 votingOptionsEl.addEventListener("click", handleClick);
+viewResultsBtn.addEventListener("click", renderResults);

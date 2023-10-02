@@ -38,7 +38,9 @@ NOTE: Displayed product names should match the file name for the product. Exampl
 
 In this module, try for a score higher than 80. Make necessary adjustments based on the report to achieve that score.
 Add a screenshot of your score to your README.md file.
-Stretch Goals
+
+## Stretch Goals
+
 Handle the display and voting for an arbitrary number of images
 Using a variable, declare in your JS how many images to show.
 Based on that value, dynamically create that many <img> tags

@@ -11,7 +11,7 @@ body {
 .container {
   margin: 0 auto;
   max-width: 1500px;
-  width: 100% - 3em;
+  width: calc(100% - 3em);
 }
 
 header,
@@ -33,6 +33,19 @@ main {
 .vote__results {
   grid-column: 1;
   grid-row: 1 / -1;
+}
+
+.vote__results > h2 {
+  margin: 0;
+}
+
+.vote__results ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.vote__results li {
+  margin: 1em 0;
 }
 
 .vote__options,
