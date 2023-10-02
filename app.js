@@ -64,7 +64,16 @@ function renderProducts() {
 
 renderProducts();
 
-function handleClick() {
+function handleClick(event) {
+  const clickedElement = event.target;
+  if (clickedElement !== votingOptionsEl) {
+    for (let i = 0; i < products.length; i++) {
+      if (products[i].name === clickedElement.alt) {
+        products[i].clicks++;
+        break;
+      }
+    }
+  }
   renderProducts();
 }
 
