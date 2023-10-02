@@ -8,6 +8,12 @@ body {
   height: 100dvh;
 }
 
+.container {
+  margin: 0 auto;
+  max-width: 1500px;
+  width: 100% - 3em;
+}
+
 header,
 main,
 footer {
@@ -43,7 +49,8 @@ main {
 .vote__options > img {
   aspect-ratio: 1;
   border: 5px solid;
-  width: 300px;
+  object-fit: cover;
+  width: 30%;
 }
 
 .vote__instructions {
