@@ -45,9 +45,17 @@ function createRandomIndex(array) {
 }
 
 function renderProducts() {
-  const option1Index = createRandomIndex(products);
-  const option2Index = createRandomIndex(products);
-  const option3Index = createRandomIndex(products);
+  let option1Index = createRandomIndex(products);
+  let option2Index = createRandomIndex(products);
+  let option3Index = createRandomIndex(products);
+
+  while (option1Index === option2Index || option1Index === option3Index) {
+    option1Index = createRandomIndex(products);
+  }
+
+  while (option2Index === option3Index) {
+    option2Index = createRandomIndex(products);
+  }
 
   option1El.src = products[option1Index].src;
   option2El.src = products[option2Index].src;
