@@ -26,3 +26,7 @@ const products = [
   new Product("Infinite Watering Can", "./assets/images/water-can.jpg"),
   new Product("Egg Wine Glass", "./assets/images/wine-glass.jpg"),
 ];
+
+function createRandomIndex(array) {
+  return Math.floor(Math.random() * array.length);
+}
