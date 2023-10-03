@@ -69,10 +69,6 @@ function renderProducts() {
     option3Index = createRandomIndex(products);
   }
 
-  // while (option2Index === option3Index) {
-  //   option2Index = createRandomIndex(products);
-  // }
-
   option1El.src = products[option1Index].src;
   option2El.src = products[option2Index].src;
   option3El.src = products[option3Index].src;
