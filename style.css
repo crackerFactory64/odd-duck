@@ -119,8 +119,13 @@ main {
   aspect-ratio: 1;
   border: 5px solid #ffc300;
   border-radius: 1em;
+  cursor: pointer;
   object-fit: cover;
   width: 30%;
+}
+
+.vote__options > img:hover {
+  scale: 0.975;
 }
 
 .vote__instructions {

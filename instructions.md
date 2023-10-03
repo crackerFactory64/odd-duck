@@ -41,7 +41,7 @@ Add a screenshot of your score to your README.md file.
 
 ## Stretch Goals
 
-Handle the display and voting for an arbitrary number of images
-Using a variable, declare in your JS how many images to show.
-Based on that value, dynamically create that many <img> tags
-Also based on that value, ensure that your randomizer is properly handling the specified number of images for display and repeat tracking.
+- Handle the display and voting for an arbitrary number of images
+- Using a variable, declare in your JS how many images to show.
+- Based on that value, dynamically create that many <img> tags
+- Also based on that value, ensure that your randomizer is properly handling the specified number of images for display and repeat tracking.
