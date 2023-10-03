@@ -60,14 +60,13 @@ main {
   display: grid;
   gap: 1em;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: auto 1fr;
   padding: 2em 0;
 }
 
 .vote__results {
   grid-column: 1 / 2;
   grid-row: 1 / -1;
-  /* max-height: 70dvh; */
   overflow-y: auto;
 }
 
@@ -85,8 +84,7 @@ main {
 }
 
 .vote__results ul {
-  list-style: none;
-  padding-left: 0;
+  list-style: circle;
 }
 
 .vote__results li {
@@ -97,6 +95,7 @@ main {
   background-color: #ffc300;
   border-radius: 100em;
   color: #003566;
+  margin-top: 1em;
   padding: 0.5em 1em;
 }
 
@@ -135,6 +134,7 @@ canvas {
   display: none;
   grid-column: 2 / -1;
   grid-row: 2/-1;
+  max-height: 100%;
   max-width: 100%;
   padding: 1em;
 }
