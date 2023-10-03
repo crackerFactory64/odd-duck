@@ -7,33 +7,33 @@ const resultsHeading = document.getElementById("results-heading");
 const viewResultsBtn = document.getElementById("view-results");
 const resultsEl = document.getElementById("results");
 
-function Product(name, src) {
+function Product(name) {
   this.name = name;
-  this.src = src;
+  this.src = `./assets/images/${name}.jpg`;
   this.clicks = 0;
   this.views = 0;
 }
 
 const products = [
-  new Product("R2D2 Bag", "./assets/images/bag.jpg"),
-  new Product("Banana Slicer", "./assets/images/banana.jpg"),
-  new Product("Tablet Holder", "./assets/images/bathroom.jpg"),
-  new Product("Toeless Wellies", "./assets/images/boots.jpg"),
-  new Product("Breakfast Oven", "./assets/images/breakfast.jpg"),
-  new Product("Meatball Bubblegum", "./assets/images/bubblegum.jpg"),
-  new Product("Lumpy Chair", "./assets/images/chair.jpg"),
-  new Product("Cthulhu Doll", "./assets/images/cthulhu.jpg"),
-  new Product("Dog Quacker", "./assets/images/dog-duck.jpg"),
-  new Product("Dragon Meat", "./assets/images/dragon.jpg"),
-  new Product("Pen Cutlery", "./assets/images/pen.jpg"),
-  new Product("Pet Sweepers", "./assets/images/pet-sweep.jpg"),
-  new Product("Pizza Scissors", "./assets/images/scissors.jpg"),
-  new Product("Shark Sleeping Bag", "./assets/images/shark.jpg"),
-  new Product("Baby Sweeper", "./assets/images/sweep.png"),
-  new Product("Tauntaun Sleeping Bag", "./assets/images/tauntaun.jpg"),
-  new Product("Unicorn Meat", "./assets/images/unicorn.jpg"),
-  new Product("Infinite Watering Can", "./assets/images/water-can.jpg"),
-  new Product("Egg Wine Glass", "./assets/images/wine-glass.jpg"),
+  new Product("bag"),
+  new Product("banana"),
+  new Product("bathroom"),
+  new Product("boots"),
+  new Product("breakfast"),
+  new Product("bubblegum"),
+  new Product("chair"),
+  new Product("cthulhu"),
+  new Product("dog-duck"),
+  new Product("dragon"),
+  new Product("pen"),
+  new Product("pet-sweep"),
+  new Product("scissors"),
+  new Product("shark"),
+  new Product("sweep"),
+  new Product("tauntaun"),
+  new Product("unicorn"),
+  new Product("water-can"),
+  new Product("wine-glass"),
 ];
 
 Product.prototype.increaseViewCount = function () {
