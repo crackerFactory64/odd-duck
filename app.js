@@ -50,17 +50,28 @@ function createRandomIndex(array) {
 }
 
 function renderProducts() {
+  console.table(previousProductIndexes);
+
   let option1Index = createRandomIndex(products);
   let option2Index = createRandomIndex(products);
   let option3Index = createRandomIndex(products);
 
-  while (option1Index === option2Index || option1Index === option3Index) {
+  while (
+    option1Index === option2Index ||
+    option1Index === option3Index ||
+    previousProductIndexes.indexOf(option1Index) !== -1 ||
+    option2Index === option3Index ||
+    previousProductIndexes.indexOf(option2Index) !== -1 ||
+    previousProductIndexes.indexOf(option3Index) !== -1
+  ) {
     option1Index = createRandomIndex(products);
+    option2Index = createRandomIndex(products);
+    option3Index = createRandomIndex(products);
   }
 
-  while (option2Index === option3Index) {
-    option2Index = createRandomIndex(products);
-  }
+  // while (option2Index === option3Index) {
+  //   option2Index = createRandomIndex(products);
+  // }
 
   option1El.src = products[option1Index].src;
   option2El.src = products[option2Index].src;
@@ -73,9 +84,9 @@ function renderProducts() {
   products[option1Index].increaseViewCount();
   products[option2Index].increaseViewCount();
   products[option3Index].increaseViewCount();
-}
 
-renderProducts();
+  previousProductIndexes = [option1Index, option2Index, option3Index];
+}
 
 function handleClick(event) {
   const clickedElement = event.target;
@@ -146,6 +157,10 @@ function renderResults() {
 }
 
 let rounds = 25;
+let previousProductIndexes = [];
+
 resultsHeading.textContent = `Rounds remaining: ${rounds}`;
 votingOptionsEl.addEventListener("click", handleClick);
 viewResultsBtn.addEventListener("click", renderResults);
+
+renderProducts();
