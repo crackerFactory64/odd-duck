@@ -56,6 +56,7 @@ function renderProducts() {
   let option2Index = createRandomIndex(products);
   let option3Index = createRandomIndex(products);
 
+  // while any of the generated indexes are the same as one used in the last round or the same as another generated index...
   while (
     option1Index === option2Index ||
     option1Index === option3Index ||
@@ -64,6 +65,7 @@ function renderProducts() {
     previousProductIndexes.indexOf(option2Index) !== -1 ||
     previousProductIndexes.indexOf(option3Index) !== -1
   ) {
+    //...regenerate the indexes
     option1Index = createRandomIndex(products);
     option2Index = createRandomIndex(products);
     option3Index = createRandomIndex(products);
@@ -86,6 +88,7 @@ function renderProducts() {
 
 function handleClick(event) {
   const clickedElement = event.target;
+
   if (clickedElement !== votingOptionsEl) {
     for (let i = 0; i < products.length; i++) {
       if (products[i].name === clickedElement.alt) {
@@ -94,6 +97,7 @@ function handleClick(event) {
       }
     }
   }
+
   renderProducts();
   rounds--;
 
@@ -111,19 +115,21 @@ function endVoting() {
 
 function renderResults() {
   resultsHeading.textContent = "Results";
+
   for (let i = 0; i < products.length; i++) {
     const li = document.createElement("li");
     li.textContent = `${products[i].name} had ${products[i].views} views and ${products[i].clicks} clicks.`;
     resultsEl.appendChild(li);
   }
+
   viewResultsBtn.setAttribute("disabled", "");
 
-  const chartLabels = [];
+  const labels = [];
   const clicks = [];
   const views = [];
 
   for (let i = 0; i < products.length; i++) {
-    chartLabels.push(products[i].name);
+    labels.push(products[i].name);
     clicks.push(products[i].clicks);
     views.push(products[i].views);
   }
@@ -131,7 +137,7 @@ function renderResults() {
   new Chart(ctx, {
     type: "bar",
     data: {
-      labels: chartLabels,
+      labels: labels,
       datasets: [
         {
           label: "Clicks",
@@ -154,8 +160,8 @@ function renderResults() {
 
 let rounds = 25;
 let previousProductIndexes = [];
-
 resultsHeading.textContent = `Rounds remaining: ${rounds}`;
+
 votingOptionsEl.addEventListener("click", handleClick);
 viewResultsBtn.addEventListener("click", renderResults);
 
