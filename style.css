@@ -65,9 +65,9 @@ main {
 }
 
 .vote__results {
-  grid-column: 1;
+  grid-column: 1 / 2;
   grid-row: 1 / -1;
-  max-height: 70dvh;
+  /* max-height: 70dvh; */
   overflow-y: auto;
 }
 
@@ -104,9 +104,8 @@ main {
   opacity: 0.5;
 }
 
-.vote__options,
-.vote__instructions {
-  grid-column: 2 /-1;
+.vote__options {
+  grid-column: 2 / -1;
 }
 
 .vote__options {
@@ -116,6 +115,7 @@ main {
 }
 
 .vote__options > img {
+  align-self: start;
   aspect-ratio: 1;
   border: 5px solid #ffc300;
   border-radius: 1em;
@@ -128,10 +128,19 @@ main {
   scale: 0.975;
 }
 
-.vote__instructions {
+canvas {
+  background-color: #fff;
+  border: 5px solid;
+  border-radius: 1em;
+  display: none;
+  grid-column: 2 / -1;
   grid-row: 2/-1;
-  margin-top: 2em;
-  line-height: 1.7;
+  max-width: 100%;
+  padding: 1em;
+}
+
+canvas.show {
+  display: block;
 }
 
 footer {
