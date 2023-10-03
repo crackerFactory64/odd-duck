@@ -92,7 +92,7 @@ function handleClick(event) {
   if (clickedElement !== votingOptionsEl) {
     for (let i = 0; i < products.length; i++) {
       if (products[i].name === clickedElement.alt) {
-        products[i].clicks++;
+        products[i].increaseClickCount();
         break;
       }
     }
