@@ -8,34 +8,56 @@ const viewResultsBtn = document.getElementById("view-results");
 const resultsEl = document.getElementById("results");
 const ctx = document.getElementById("chart");
 
-function Product(name) {
+function Product(name, clicks = 0, views = 0) {
   this.name = name;
   this.src = `./assets/images/${name}.jpg`;
-  this.clicks = 0;
-  this.views = 0;
+  this.clicks = clicks;
+  this.views = views;
 }
 
-const products = [
-  new Product("bag"),
-  new Product("banana"),
-  new Product("bathroom"),
-  new Product("boots"),
-  new Product("breakfast"),
-  new Product("bubblegum"),
-  new Product("chair"),
-  new Product("cthulhu"),
-  new Product("dog-duck"),
-  new Product("dragon"),
-  new Product("pen"),
-  new Product("pet-sweep"),
-  new Product("scissors"),
-  new Product("shark"),
-  new Product("sweep"),
-  new Product("tauntaun"),
-  new Product("unicorn"),
-  new Product("water-can"),
-  new Product("wine-glass"),
-];
+const products = [];
+checkLocal();
+
+function checkLocal() {
+  const parsedData = JSON.parse(localStorage.getItem("products"));
+  if (!parsedData) {
+    products.push(new Product("bag"));
+    products.push(new Product("banana"));
+    products.push(new Product("boots"));
+    products.push(new Product("bathroom"));
+    products.push(new Product("breakfast"));
+    products.push(new Product("bubblegum"));
+    products.push(new Product("chair"));
+    products.push(new Product("cthulhu"));
+    products.push(new Product("dog-duck"));
+    products.push(new Product("dragon"));
+    products.push(new Product("pen"));
+    products.push(new Product("pet-sweep"));
+    products.push(new Product("scissors"));
+    products.push(new Product("shark"));
+    products.push(new Product("sweep"));
+    products.push(new Product("tauntaun"));
+    products.push(new Product("unicorn"));
+    products.push(new Product("water-can"));
+    products.push(new Product("wine-glass"));
+
+    storeInLocalStorage();
+  } else {
+    for (let i = 0; i < parsedData.length; i++) {
+      products.push(
+        new Product(
+          parsedData[i].name,
+          parsedData[i].clicks,
+          parsedData[i].views
+        )
+      );
+    }
+  }
+}
+
+function storeInLocalStorage() {
+  localStorage.setItem("products", JSON.stringify(products));
+}
 
 Product.prototype.increaseViewCount = function () {
   this.views++;
@@ -109,6 +131,7 @@ function handleClick(event) {
 function endVoting() {
   votingOptionsEl.removeEventListener("click", handleClick);
   viewResultsBtn.removeAttribute("disabled");
+  storeInLocalStorage();
 }
 
 function renderResults() {
@@ -154,6 +177,7 @@ function renderResults() {
   });
 
   ctx.classList.add("show");
+  votingOptionsEl.style.display = "none";
 }
 
 let rounds = 25;

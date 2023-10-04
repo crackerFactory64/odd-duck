@@ -58,7 +58,7 @@ main {
 
 .vote {
   display: grid;
-  gap: 1em;
+  gap: 2em;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: auto 1fr;
   padding: 2em 0;
@@ -67,6 +67,8 @@ main {
 .vote__results {
   grid-column: 1 / 2;
   grid-row: 1 / -1;
+  max-height: 80dvh;
+  padding-right: 1em;
   overflow-y: auto;
 }
 
@@ -128,12 +130,13 @@ main {
 }
 
 canvas {
+  align-self: center;
   background-color: #fff;
   border: 5px solid;
   border-radius: 1em;
   display: none;
   grid-column: 2 / -1;
-  grid-row: 2/-1;
+  grid-row: 1/-1;
   max-height: 100%;
   max-width: 100%;
   padding: 1em;
