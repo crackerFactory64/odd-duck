@@ -178,6 +178,7 @@ function renderResults() {
 
   ctx.classList.add("show");
   votingOptionsEl.style.display = "none";
+  viewResultsBtn.style.display = "none";
 }
 
 let rounds = 25;
