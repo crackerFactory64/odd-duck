@@ -73,6 +73,8 @@ main {
 }
 
 .vote__results::-webkit-scrollbar {
+  border: 1px solid;
+  border-radius: 100em;
   width: 1em;
 }
 
