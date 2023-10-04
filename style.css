@@ -124,7 +124,7 @@ main {
 }
 
 .vote__options > img:hover {
-  scale: 0.975;
+  box-shadow: 0em 0em 2em #ffc300;
 }
 
 canvas {

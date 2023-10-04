@@ -50,8 +50,6 @@ function createRandomIndex(array) {
 }
 
 function renderProducts() {
-  console.table(previousProductIndexes);
-
   let option1Index = createRandomIndex(products);
   let option2Index = createRandomIndex(products);
   let option3Index = createRandomIndex(products);
