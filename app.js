@@ -139,7 +139,7 @@ function renderResults() {
 
   for (let i = 0; i < products.length; i++) {
     const li = document.createElement("li");
-    li.textContent = `${products[i].name} had ${products[i].views} views and ${products[i].clicks} clicks.`;
+    li.textContent = `'${products[i].name}' has had ${products[i].views} views and ${products[i].clicks} clicks.`;
     resultsEl.appendChild(li);
   }
 
