@@ -1,0 +1,44 @@
+body {
+  background-color: seashell;
+  font-family: monospace;
+  font-size: 1.1rem;
+  margin: 0;
+  min-height: 100dvh;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1500px;
+  width: calc(100% - 3em);
+}
+
+header {
+  padding: 2em 0;
+}
+
+header > * {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+h1 {
+  margin: 0;
+}
+
+main > * {
+  margin: auto;
+}
+
+main h2 {
+  margin: 1em 0;
+}
+
+canvas {
+  width: 100%;
+}
+
+footer {
+  padding: 1em;
+  text-align: center;
+}

@@ -27,14 +27,29 @@ function renderCharts() {
         {
           label: "Clicks",
           data: clicks,
-          backgroundColor: ["rgb(255, 205, 86)"],
+          backgroundColor: ["black"],
+          borderColor: ["black"],
+          borderWidth: 1,
         },
         {
           label: "Views",
           data: views,
-          backgroundColor: ["rgba(255, 205, 86, 0.2)"],
-          borderColor: ["rgba(255, 205, 86)"],
+          backgroundColor: ["transparent"],
+          borderColor: ["black"],
           borderWidth: 1,
+        },
+      ],
+    },
+  });
+
+  new Chart(ctx2, {
+    type: "doughnut",
+    data: {
+      labels: labels,
+      datasets: [
+        {
+          label: "Clicks",
+          data: clicks,
         },
       ],
     },

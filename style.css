@@ -165,6 +165,8 @@ main {
 footer {
   background-color: #ffc300;
   color: #003566;
+  font-size: 0.9rem;
+  font-weight: 600;
   grid-row: 3 / -1;
   text-align: center;
   padding: 1em;
