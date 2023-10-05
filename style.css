@@ -99,8 +99,15 @@ main {
   background-color: #ffc300;
   border-radius: 100em;
   color: #003566;
+  font-weight: 700;
   margin-top: 1em;
-  padding: 0.5em 1em;
+  padding: 0.5em 1.5em;
+  text-transform: uppercase;
+}
+
+.vote__results > button:not(:disabled):hover {
+  cursor: pointer;
+  scale: 0.95;
 }
 
 .vote__results > button:disabled {
@@ -145,6 +152,26 @@ canvas {
 }
 
 canvas.show {
+  display: block;
+}
+
+.charts-link {
+  align-self: start;
+  background-color: #ffc300;
+  border-radius: 100em;
+  color: #003566;
+  display: none;
+  font-weight: 700;
+  grid-column: 2 / -1;
+  margin: 0 auto;
+  padding: 1em;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: fit-content;
+}
+
+.charts-link.show {
   display: block;
 }
 

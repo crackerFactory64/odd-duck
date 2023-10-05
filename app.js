@@ -143,42 +143,8 @@ function renderResults() {
     resultsEl.appendChild(li);
   }
 
-  viewResultsBtn.setAttribute("disabled", "");
-
-  const labels = [];
-  const clicks = [];
-  const views = [];
-
-  for (let i = 0; i < products.length; i++) {
-    labels.push(products[i].name);
-    clicks.push(products[i].clicks);
-    views.push(products[i].views);
-  }
-
-  new Chart(ctx, {
-    type: "bar",
-    data: {
-      labels: labels,
-      datasets: [
-        {
-          label: "Clicks",
-          data: clicks,
-          backgroundColor: ["rgb(255, 205, 86)"],
-        },
-        {
-          label: "Views",
-          data: views,
-          backgroundColor: ["rgba(255, 205, 86, 0.2)"],
-          borderColor: ["rgba(255, 205, 86)"],
-          borderWidth: 1,
-        },
-      ],
-    },
-  });
-
-  ctx.classList.add("show");
-  votingOptionsEl.style.display = "none";
   viewResultsBtn.style.display = "none";
+  document.querySelector("a[href='./charts.html'").classList.add("show");
 }
 
 let rounds = 25;
