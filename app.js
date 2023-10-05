@@ -130,6 +130,7 @@ function handleClick(event) {
 
 function endVoting() {
   votingOptionsEl.removeEventListener("click", handleClick);
+  votingOptionsEl.classList.add("end");
   viewResultsBtn.removeAttribute("disabled");
   storeInLocalStorage();
 }

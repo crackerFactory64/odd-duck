@@ -134,8 +134,17 @@ main {
   width: 30%;
 }
 
-.vote__options > img:hover {
+.vote__options:not(.end) > img:hover {
   box-shadow: 0em 0em 2em #ffc300;
+}
+
+.vote__options.end {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.vote__options.end > img {
+  cursor: not-allowed;
 }
 
 .charts-link {
