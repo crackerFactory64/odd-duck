@@ -138,23 +138,6 @@ main {
   box-shadow: 0em 0em 2em #ffc300;
 }
 
-canvas {
-  align-self: center;
-  background-color: #fff;
-  border: 5px solid;
-  border-radius: 1em;
-  display: none;
-  grid-column: 2 / -1;
-  grid-row: 1/-1;
-  max-height: 70dvh;
-  max-width: 100%;
-  padding: 1em;
-}
-
-canvas.show {
-  display: block;
-}
-
 .charts-link {
   align-self: start;
   background-color: #ffc300;
@@ -173,6 +156,10 @@ canvas.show {
 
 .charts-link.show {
   display: block;
+}
+
+.charts-link.show:hover {
+  scale: 0.95;
 }
 
 footer {
